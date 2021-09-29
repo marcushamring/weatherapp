@@ -36,13 +36,13 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=gävle&appid=b35e37918b
     let descSymbol = data.weather[0].id
     console.log(descSymbol)
     //Changing background image depending on Weather
-    if (descSymbol>800) {
-            document.body.style.backgroundImage = 'url(https://media.istockphoto.com/photos/storm-sky-rain-picture-id512218646?k=20&m=512218646&s=612x612&w=0&h=C-2Gn8nsMG-o7QNiXYPqu4FeJJFABhPpe4rTG0CIMWQ=)'
-    } else if (descSymbol===800){
-            document.body.style.backgroundImage = 'url(https://news.in-24.com/temp/resized/medium_2021-05-11-8c01f7b7ae.jpg)'
-    }else if(descSymbol>200){
-            document.body.style.backgroundImage='url(https://mrsmindfulness-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/876588-rain-wallpaper.gif)'
-    }
+//     if (descSymbol>800) {
+//             document.body.style.backgroundImage = 'url(https://i.redd.it/ykkbu29d6nb61.jpg)'
+//     } else if (descSymbol===800){
+//             document.body.style.backgroundImage = 'url(https://news.in-24.com/temp/resized/medium_2021-05-11-8c01f7b7ae.jpg)'
+//     }else if(descSymbol>200){
+//             document.body.style.backgroundImage='url(https://mrsmindfulness-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/876588-rain-wallpaper.gif)'
+//     }
 
     }).catch(err =>{
     console.log(err)
@@ -84,13 +84,13 @@ btn.addEventListener('click', function (){
     let descSymbol = data.weather[0].id
     console.log(descSymbol)
     //Changing background image depending on Weather
-    if (descSymbol>800) {
-            document.body.style.backgroundImage = 'url(https://media.istockphoto.com/photos/storm-sky-rain-picture-id512218646?k=20&m=512218646&s=612x612&w=0&h=C-2Gn8nsMG-o7QNiXYPqu4FeJJFABhPpe4rTG0CIMWQ=)'
-    } else if (descSymbol===800){
-            document.body.style.backgroundImage = 'url(https://news.in-24.com/temp/resized/medium_2021-05-11-8c01f7b7ae.jpg)'
-    }else if(descSymbol>200){
-            document.body.style.backgroundImage='url(https://mrsmindfulness-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/876588-rain-wallpaper.gif)'
-    }
+//     if (descSymbol>800) {
+//             document.body.style.backgroundImage = 'url(https://media.istockphoto.com/photos/storm-sky-rain-picture-id512218646?k=20&m=512218646&s=612x612&w=0&h=C-2Gn8nsMG-o7QNiXYPqu4FeJJFABhPpe4rTG0CIMWQ=)'
+//     } else if (descSymbol===800){
+//             document.body.style.backgroundImage = 'url(https://news.in-24.com/temp/resized/medium_2021-05-11-8c01f7b7ae.jpg)'
+//     }else if(descSymbol>200){
+//             document.body.style.backgroundImage='url(https://mrsmindfulness-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/876588-rain-wallpaper.gif)'
+//     }
 
     }).catch(err =>{
     console.log(err)
