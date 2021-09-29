@@ -1,0 +1,48 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.input {
+  text-align: center;
+  margin: 100px 0px;
+}
+.inputValue {
+  height: 40px;
+  width: 250px;
+}
+.button {
+  height: 40px;
+  width: 60px;
+  background-color: black;
+  color: white;
+}
+.button:hover {
+  color: blue;
+}
+.display {
+  text-align: center;
+  padding: 5px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: cornsilk;
+  width: 50%;
+  margin: auto;
+}
+.details {
+  height: 40px;
+  width: 60px;
+  background-color: black;
+  color: white;
+}
+.details:hover {
+  color: blue;
+}
+.forecast {
+  background-color: darkgoldenrod;
+  display: flex;
+  flex-direction: column;
+  font-size: 17px;
+}
