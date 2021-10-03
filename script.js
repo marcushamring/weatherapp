@@ -7,12 +7,7 @@ let desc = document.querySelector('.desc')
 let temp = document.querySelector('.temp')
 let dt = document.querySelector('.dt')
 
-
-
-// const apiKey = 'b35e37918b9548b89ac7b237fca37292'
-// let url =`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=b35e37918b9548b89ac7b237fca37292`
-
-//Collecting information about Gävle
+//Collecting information about Gävle for initial load on page
 fetch('https://api.openweathermap.org/data/2.5/weather?q=gävle&appid=b35e37918b9548b89ac7b237fca37292')
     .then(response =>{
     return response.json();
