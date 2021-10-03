@@ -1,15 +1,16 @@
 let btn = document.querySelector('.button')
 let detailsbtn = document.querySelector('.details')
 let inputValue = document.querySelector('.inputValue')
+inputValue.defaultValue='gävle'
 let city = document.querySelector('.city')
 let desc = document.querySelector('.desc')
 let temp = document.querySelector('.temp')
 let dt = document.querySelector('.dt')
-inputValue.defaultValue='gävle'
+
 
 
 // const apiKey = 'b35e37918b9548b89ac7b237fca37292'
-let url =`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=b35e37918b9548b89ac7b237fca37292`
+// let url =`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=b35e37918b9548b89ac7b237fca37292`
 
 //Collecting information about Gävle
 fetch('https://api.openweathermap.org/data/2.5/weather?q=gävle&appid=b35e37918b9548b89ac7b237fca37292')
@@ -35,15 +36,6 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=gävle&appid=b35e37918b
     
     let descSymbol = data.weather[0].id
     console.log(descSymbol)
-    //Changing background image depending on Weather
-//     if (descSymbol>800) {
-//             document.body.style.backgroundImage = 'url(https://i.redd.it/ykkbu29d6nb61.jpg)'
-//     } else if (descSymbol===800){
-//             document.body.style.backgroundImage = 'url(https://news.in-24.com/temp/resized/medium_2021-05-11-8c01f7b7ae.jpg)'
-//     }else if(descSymbol>200){
-//             document.body.style.backgroundImage='url(https://mrsmindfulness-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/876588-rain-wallpaper.gif)'
-//     }
-
     }).catch(err =>{
     console.log(err)
 })
@@ -52,7 +44,6 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=gävle&appid=b35e37918b
 btn.addEventListener('click', function (){
         detailsbtn.disabled=false;
         let inputValue = document.querySelector('.inputValue')
-
         inputValue=inputValue.value;
     console.log(inputValue)
     let url =`https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=b35e37918b9548b89ac7b237fca37292`
@@ -83,15 +74,6 @@ btn.addEventListener('click', function (){
     
     let descSymbol = data.weather[0].id
     console.log(descSymbol)
-    //Changing background image depending on Weather
-//     if (descSymbol>800) {
-//             document.body.style.backgroundImage = 'url(https://media.istockphoto.com/photos/storm-sky-rain-picture-id512218646?k=20&m=512218646&s=612x612&w=0&h=C-2Gn8nsMG-o7QNiXYPqu4FeJJFABhPpe4rTG0CIMWQ=)'
-//     } else if (descSymbol===800){
-//             document.body.style.backgroundImage = 'url(https://news.in-24.com/temp/resized/medium_2021-05-11-8c01f7b7ae.jpg)'
-//     }else if(descSymbol>200){
-//             document.body.style.backgroundImage='url(https://mrsmindfulness-wpengine.netdna-ssl.com/wp-content/uploads/2015/06/876588-rain-wallpaper.gif)'
-//     }
-
     }).catch(err =>{
     console.log(err)
 
@@ -115,6 +97,7 @@ function myDetailedSearch(){
                 const noonMaxTemp = []
                 const noonMinTemp= []
                 const noonWxInfo = []
+                const noonWxIcon = []
                 for (let i = 0; i < myArray.length; i++) {
                         
                         const element = myArray[i].dt_txt;
@@ -122,15 +105,20 @@ function myDetailedSearch(){
                         tempmax = tempmax-273.15;;
                         let tempmin =myArray[i].main.temp_min
                         tempmin = tempmin - 273.17;
-                        const wxinfo = myArray[i].weather[0].description; 
+                        const wxinfo = myArray[i].weather[0].description;
+                        let iconId = myArray[i].weather[0].icon;
                         //console.log(element)
                         
                         noonWeather.push(element)
                         noonMaxTemp.push(tempmax)
                         noonMinTemp.push(tempmin)
                         noonWxInfo.push(wxinfo)
+                        noonWxIcon.push(iconId)
                         //selecting todays cloest forecast and then the 4 consecutive days
                         if (i%8===0) {
+                                
+                                let iconULR = `http://openweathermap.org/img/wn/${noonWxIcon[i]}@2x.png`
+                                
                                 let dateElement = document.createElement('p');
                                 dateElement.innerHTML = `Date: ${noonWeather[i]}`
                                 let forecastdiv = document.querySelector('.forecast')
@@ -147,13 +135,19 @@ function myDetailedSearch(){
                                 let wx_Element = document.createElement('p');
                                 wx_Element.innerHTML = `General condition: ${noonWxInfo[i]}`
                                 forecastdiv.appendChild(wx_Element);
+                                
+                                let wx_Icon = document.createElement('img')
+                                wx_Icon.src = iconULR
+                                forecastdiv.appendChild(wx_Icon)
+
                                 let margin = document.createElement('hr')
                                 forecastdiv.appendChild(margin)
                                 
                                 console.log(noonWeather[i])
                                 console.log(noonMaxTemp[i])
                                 console.log(noonMinTemp[i]) 
-                                console.log(noonWxInfo[i])      
+                                console.log(noonWxInfo[i])
+                                console.log(noonWxIcon[i])      
                         }
 
                 }
