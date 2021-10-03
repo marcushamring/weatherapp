@@ -1,7 +1,7 @@
 let btn = document.querySelector('.button')
 let detailsbtn = document.querySelector('.details')
 let inputValue = document.querySelector('.inputValue')
-inputValue.defaultValue='gävle'
+inputValue.defaultValue='Gävle'
 let city = document.querySelector('.city')
 let desc = document.querySelector('.desc')
 let temp = document.querySelector('.temp')
