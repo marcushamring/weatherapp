@@ -7,6 +7,7 @@ let desc = document.querySelector('.desc')
 let temp = document.querySelector('.temp')
 let dt = document.querySelector('.dt')
 
+
 //Collecting information about Gävle for initial load on page
 fetch('https://api.openweathermap.org/data/2.5/weather?q=gävle&appid=b35e37918b9548b89ac7b237fca37292')
     .then(response =>{
@@ -111,7 +112,6 @@ function myDetailedSearch(){
                         noonWxIcon.push(iconId)
                         //selecting todays cloest forecast and then the 4 consecutive days
                         if (i%8===0) {
-                                
                                 let iconULR = `http://openweathermap.org/img/wn/${noonWxIcon[i]}@2x.png`
                                 
                                 let dateElement = document.createElement('p');

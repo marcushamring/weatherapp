@@ -24,13 +24,12 @@ body {
   font-weight: bold;
   color: #000;
 }
-.input {
-  text-align: center;
-}
+/* height and width of textbox */
 .inputValue {
   height: 40px;
   width: 250px;
 }
+/* button for search */
 .button {
   height: 40px;
   width: 60px;
@@ -41,14 +40,7 @@ body {
 .button:hover {
   color: blue;
 }
-.display {
-  text-align: center;
-  color: whitesmoke;
-  font-weight: bold;
-  font-size: 20px;
-  width: 50%;
-  margin: auto;
-}
+/* button for detailed info */
 .details {
   height: 40px;
   width: 60px;
@@ -60,6 +52,15 @@ body {
 .details:hover {
   color: blue;
 }
+.display {
+  text-align: center;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 20px;
+  width: 30%;
+  margin: auto;
+}
+
 .forecast {
   margin-top: 10px;
   background-color: white;
@@ -68,13 +69,12 @@ body {
   opacity: 0.8;
   border-radius: 10px;
 }
-.forecast p {
+.forecast > div {
   font-weight: bold;
 }
-img {
+.forecast > img {
   width: 50px;
   height: 50px;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  opacity: 1;
+  border-radius: 10px;
 }
