@@ -38,6 +38,7 @@ fetch('https://api.openweathermap.org/data/2.5/weather?q=gävle&appid=b35e37918b
 
 //search for specific results
 btn.addEventListener('click', function (){
+        
         detailsbtn.disabled=false;
         let inputValue = document.querySelector('.inputValue')
         inputValue=inputValue.value;

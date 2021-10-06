@@ -57,7 +57,7 @@ body {
   color: whitesmoke;
   font-weight: bold;
   font-size: 20px;
-  width: 30%;
+  width: 45%;
   margin: auto;
 }
 
@@ -68,6 +68,8 @@ body {
   font-size: 17px;
   opacity: 0.8;
   border-radius: 10px;
+  width: 80%;
+  margin: 10px auto auto auto;
 }
 .forecast > div {
   font-weight: bold;
